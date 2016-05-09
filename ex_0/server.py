@@ -3,7 +3,7 @@ from redis import StrictRedis
 
 
 app = Flask(__name__)
-redis = StrictRedis(host="localhost", port=6379, db=0)
+redis = StrictRedis(host="redis", port=6379, db=0)
 KEY = "master_key"
 
 
@@ -14,4 +14,4 @@ def increment():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
